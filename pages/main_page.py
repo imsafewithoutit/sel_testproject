@@ -1,6 +1,7 @@
-# def test_add_to_cart(browser):
-#     page = ProductPage(url="", browser)   # инициализируем объект Page Object
-#     page.open()                           # открываем страницу в браузере
-#     page.should_be_add_to_cart_button()   # проверяем что есть кнопка добавления в корзину
-#     page.add_product_to_cart()            # жмем кнопку добавить в корзину 
-#     page.should_be_success_message()   
+from .base_page import BasePage
+from selenium.webdriver.common.by import By
+
+class MainPage(BasePage):
+    def go_to_login_page(self):
+        login_link = self.browser.find_element(By.CSS_SELECTOR, "#login_link")
+        login_link.click()
